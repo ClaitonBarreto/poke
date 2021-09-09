@@ -29,7 +29,8 @@
     "update:feat": "apv update feature",
     "update:fix": "apv update fix",
     "update:breaking": "apv update breaking",
-    "deploy": "yarn build && aws s3 sync build/ s3://poke.com"
+    "client-cloudfron-invalidation":"aws cloudfront create-invalidation --distribution-id E3G8HQ6F4GWW2Q --paths '/*'",
+    "deploy": "yarn build && aws s3 rm s3://poke.com --recursive && aws s3 sync build/ s3://poke.com"
   },
   "eslintConfig": {
     "extends": [
