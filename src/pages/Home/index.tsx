@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { BsCaretLeft, BsCaretRight } from 'react-icons/bs'
+import PokemonContainer from "../../containers/PokemonContainer"
 
-import { HomepageContainer, PokemonsWrapper, PokemonContainer, PrevNextButton, PrevNextWrapper } from './styles'
+import { HomepageContainer, PokemonsWrapper, PrevNextButton, PrevNextWrapper } from './styles'
 
 const Home = () => {
 
@@ -39,10 +40,7 @@ const Home = () => {
             <button>Efetuar busca</button>
             <PokemonsWrapper>
                 {pokemons.map((pokemon:Pokemon) => (
-                    <PokemonContainer key={pokemon.name}>
-                        <span>{pokemon.name}</span>
-                        <img src={pokemon.spriteUrl} alt="" />
-                    </PokemonContainer>
+                    <PokemonContainer pokemon={pokemon}/>
                 ))}
             </PokemonsWrapper>
             <PrevNextWrapper>
