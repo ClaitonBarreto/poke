@@ -15,12 +15,6 @@ export const PokemonsWrapper = styled.div`
     gap: 12px;
     width: 90%;
 `
-export const PokemonContainer = styled.div`
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 1px 2px 2px #333;
-    cursor: pointer;
-`
 
 export const PrevNextWrapper = styled.div`
     width: 40%;
