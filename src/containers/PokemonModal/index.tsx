@@ -2,6 +2,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import Image from '../../infra/Image';
 import Text from '../../infra/Text';
 
 const ModalRoot = styled.div`
@@ -39,7 +40,7 @@ interface PokemonModalProps {
 }
 const PokemonModal = ({ pokemon, onClose, isOpen }: PokemonModalProps) => {
 
-    const [pokemonData, setPokemonData] = useState()
+    const [, setPokemonData] = useState()
     
 
     useEffect(() => {
@@ -50,13 +51,13 @@ const PokemonModal = ({ pokemon, onClose, isOpen }: PokemonModalProps) => {
                 setPokemonData(response.data)
             })()
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [isOpen])
 
-    useEffect(() => console.log(pokemonData), [pokemonData])
-
-    function sleep(ms:number) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    // function sleep(ms:number) {
+    // return new Promise(resolve => setTimeout(resolve, ms));
+    // }
 
     return (
         <>
@@ -64,7 +65,7 @@ const PokemonModal = ({ pokemon, onClose, isOpen }: PokemonModalProps) => {
             <ModalRoot onClick={onClose}>
                 <PokemonContainer>
                     <PokemonName as='h1'>{pokemon.name}</PokemonName>
-                    <img src={pokemon.spriteUrl}/>
+                    <Image src={pokemon.spriteUrl} alt="pokemon_container"/>
                 </PokemonContainer>
             </ModalRoot>
         )}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Image from '../../infra/Image';
 import PokemonModal from '../PokemonModal';
 import { Container, Sprite } from './styles'
 

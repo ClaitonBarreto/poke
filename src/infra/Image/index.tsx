@@ -7,7 +7,7 @@ interface ImageProps {
 const Image = ({ ...options }: ImageProps & ImgHTMLAttributes<HTMLImageElement>) => {
 
     return (
-        <img {...options} />
+        <img {...options} alt={options.alt || "image"}/>
     )
 }
 
